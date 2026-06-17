@@ -1,4 +1,4 @@
-const contactEmail = "hello@mufengsg.com";
+const contactEmail = "mufeng@apecmail.com";
 
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
@@ -15,53 +15,53 @@ const plannerOutput = {
 const recommendations = {
   strategy: {
     explore: {
-      title: "Strategy sprint",
-      copy: "A focused diagnostic and working session to clarify priorities, risks, and the next operating plan.",
-      items: ["Discovery call", "Priority map", "30-day action plan"]
+      title: "Clarity call",
+      copy: "A short conversation to understand what is unclear, what has already been tried, and where help would actually be useful.",
+      items: ["What is stuck", "What needs deciding", "What to do next"]
     },
     build: {
-      title: "Roadmap build-out",
-      copy: "A structured engagement to turn a chosen direction into milestones, owners, measures, and delivery rhythm.",
-      items: ["Operating roadmap", "Decision map", "Leadership working session"]
+      title: "Working map",
+      copy: "A practical map of the current plan, the open decisions, and the people who need to move it forward.",
+      items: ["Current plan", "Open questions", "Next working session"]
     },
     scale: {
-      title: "Growth operating cadence",
-      copy: "A retained rhythm for leadership alignment, performance review, and practical next-step governance.",
-      items: ["Monthly cadence", "Scorecard design", "Risk and priority review"]
+      title: "Decision reset",
+      copy: "A calm review of what has become complicated, what can be simplified, and what should happen next.",
+      items: ["What to stop", "What to keep", "Cleaner next steps"]
     }
   },
   learning: {
     explore: {
-      title: "Learning needs map",
-      copy: "A compact review of audience needs, learning objectives, and the practical support required.",
-      items: ["Audience profile", "Learning goals", "Session outline"]
+      title: "Learning brief",
+      copy: "A simple brief for the people, topic, and outcome before anyone starts building slides or materials.",
+      items: ["Audience", "Useful outcome", "Session shape"]
     },
     build: {
-      title: "Workshop design",
-      copy: "A hands-on design cycle for workshops, facilitation guides, participant materials, and follow-through tools.",
-      items: ["Workshop architecture", "Facilitator notes", "Post-session toolkit"]
+      title: "Workshop build",
+      copy: "A usable session plan with flow, prompts, materials, and follow-up that fit the people in the room.",
+      items: ["Session flow", "Facilitator notes", "Follow-up notes"]
     },
     scale: {
-      title: "Program system",
-      copy: "A repeatable learning program with measures, modular content, and a support model for wider rollout.",
-      items: ["Curriculum map", "Delivery playbook", "Adoption measures"]
+      title: "Program tidy-up",
+      copy: "A clearer structure for a training or education program that needs to be repeated without losing quality.",
+      items: ["Program map", "Reusable materials", "Review points"]
     }
   },
   operating: {
     explore: {
-      title: "Team rhythm audit",
-      copy: "A short diagnosis of meetings, decisions, handoffs, and the places where momentum currently leaks.",
-      items: ["Meeting scan", "Decision friction map", "Quick wins"]
+      title: "Process check",
+      copy: "A short look at where the work slows down, where people wait, and what can be made easier first.",
+      items: ["Where time goes", "Where decisions stall", "Small fixes"]
     },
     build: {
-      title: "Operating system setup",
-      copy: "Design the rituals, scorecards, ownership model, and review structure that help the team move consistently.",
-      items: ["Meeting architecture", "Owner map", "Scorecard template"]
+      title: "Working routine",
+      copy: "A simple rhythm for meetings, notes, owners, and follow-up so the team can keep momentum.",
+      items: ["Meeting rhythm", "Owner list", "Follow-up format"]
     },
     scale: {
-      title: "Governance refinement",
-      copy: "Tune the management cadence so a larger team can stay aligned without adding unnecessary bureaucracy.",
-      items: ["Governance review", "Escalation paths", "Quarterly rhythm"]
+      title: "Cleanup session",
+      copy: "A practical reset for a process that has collected too many steps, meetings, or unclear owners.",
+      items: ["Remove clutter", "Clarify owners", "Agree the next routine"]
     }
   }
 };
@@ -90,18 +90,18 @@ function updatePlanner() {
   const contactSelect = document.querySelector(".contact-form select[name='focus']");
   if (contactSelect) {
     const map = {
-      strategy: "Management consultancy",
-      learning: "Educational support",
-      operating: "Team enablement"
+      strategy: "Business advisory",
+      learning: "Workshop support",
+      operating: "Operating support"
     };
-    contactSelect.value = map[focus] || "Management consultancy";
+    contactSelect.value = map[focus] || "Business advisory";
   }
 }
 
 function enquiryText(form) {
   const data = new FormData(form);
   const lines = [
-    "New enquiry for MUFENG PTE. LTD.",
+    "New enquiry for mufeng",
     "",
     `Name: ${data.get("name") || ""}`,
     `Email: ${data.get("email") || ""}`,
@@ -115,17 +115,6 @@ function enquiryText(form) {
   return lines.join("\n");
 }
 
-async function copyEnquiry(form, status) {
-  const text = enquiryText(form);
-  if (!navigator.clipboard) {
-    status.textContent = "Clipboard is unavailable in this browser.";
-    return;
-  }
-
-  await navigator.clipboard.writeText(text);
-  status.textContent = "Enquiry copied.";
-}
-
 function handleContactSubmit(event) {
   event.preventDefault();
 
@@ -135,7 +124,7 @@ function handleContactSubmit(event) {
   if (!form.reportValidity()) return;
 
   const data = new FormData(form);
-  const subject = encodeURIComponent(`MUFENG enquiry - ${data.get("focus")}`);
+  const subject = encodeURIComponent(`mufeng enquiry - ${data.get("focus")}`);
   const body = encodeURIComponent(enquiryText(form));
   const mailto = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 
@@ -188,14 +177,3 @@ document.querySelector("[data-planner]")?.addEventListener("change", updatePlann
 
 const contactForm = document.querySelector("[data-contact-form]");
 contactForm?.addEventListener("submit", handleContactSubmit);
-document.querySelector("[data-copy-enquiry]")?.addEventListener("click", async () => {
-  const status = contactForm.querySelector("[data-form-status]");
-
-  if (!contactForm.reportValidity()) return;
-
-  try {
-    await copyEnquiry(contactForm, status);
-  } catch {
-    status.textContent = "The enquiry could not be copied.";
-  }
-});

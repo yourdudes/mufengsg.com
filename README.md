@@ -1,12 +1,13 @@
-# MUFENG website
+# mufeng website
 
-Static website for MUFENG PTE. LTD. using verified public company details from the ACRA Business Profile.
+Static website for mufeng, with a public-facing brand treatment.
 
 ## Files
 
 - `index.html` - full website markup and SEO metadata
 - `styles.css` - responsive visual system
 - `script.js` - navigation, planner, and enquiry interactions
+- `assets/mufeng-logo.png` - brand logo
 - `assets/mufeng-workshop-hero.png` - generated hero image
 - `assets/favicon.svg` - site icon
 - `robots.txt` and `sitemap.xml` - search engine files for `mufengsg.com`
@@ -31,4 +32,4 @@ For DNS in GoDaddy, the exact record values depend on the hosting provider:
 - GitHub Pages uses `A` records for `@` and a `CNAME` record for `www`.
 - cPanel or shared hosting usually gives an `A` record IP address for `@`.
 
-Update `script.js` if the preferred enquiry address should be different from `hello@mufengsg.com`.
+Update `script.js` if the preferred enquiry address changes from `mufeng@apecmail.com`.
