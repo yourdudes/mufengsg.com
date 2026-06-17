@@ -14,54 +14,54 @@ const plannerOutput = {
 
 const recommendations = {
   strategy: {
-    explore: {
-      title: "Clarity call",
-      copy: "A short conversation to understand what is unclear, what has already been tried, and where help would actually be useful.",
-      items: ["What is stuck", "What needs deciding", "What to do next"]
+    assess: {
+      title: "Executive diagnostic",
+      copy: "A focused leadership session to define the real strategic question, surface trade-offs, and decide what needs to move first.",
+      items: ["Decision map", "Opportunity scan", "30-day action agenda"]
     },
-    build: {
-      title: "Working map",
-      copy: "A practical map of the current plan, the open decisions, and the people who need to move it forward.",
-      items: ["Current plan", "Open questions", "Next working session"]
+    design: {
+      title: "Growth blueprint",
+      copy: "A structured strategy sprint to clarify where to play, how to win, and what operating choices must change.",
+      items: ["Growth thesis", "Strategic priorities", "Leadership narrative"]
     },
-    scale: {
-      title: "Decision reset",
-      copy: "A calm review of what has become complicated, what can be simplified, and what should happen next.",
-      items: ["What to stop", "What to keep", "Cleaner next steps"]
+    mobilise: {
+      title: "Strategy mobilisation",
+      copy: "A 90-day path that turns the strategy into owners, milestones, meeting cadence, and decision forums.",
+      items: ["Milestone plan", "Owner model", "Performance rhythm"]
     }
   },
-  learning: {
-    explore: {
-      title: "Learning brief",
-      copy: "A simple brief for the people, topic, and outcome before anyone starts building slides or materials.",
-      items: ["Audience", "Useful outcome", "Session shape"]
+  transformation: {
+    assess: {
+      title: "Operating model review",
+      copy: "A practical scan of how work currently moves, where decisions slow down, and what must be redesigned first.",
+      items: ["Current-state map", "Decision bottlenecks", "Transformation risks"]
     },
-    build: {
-      title: "Workshop build",
-      copy: "A usable session plan with flow, prompts, materials, and follow-up that fit the people in the room.",
-      items: ["Session flow", "Facilitator notes", "Follow-up notes"]
+    design: {
+      title: "Transformation blueprint",
+      copy: "A designed future state for teams, governance, workflows, and leadership routines that can be implemented.",
+      items: ["Future-state model", "Governance design", "Workstream roadmap"]
     },
-    scale: {
-      title: "Program tidy-up",
-      copy: "A clearer structure for a training or education program that needs to be repeated without losing quality.",
-      items: ["Program map", "Reusable materials", "Review points"]
+    mobilise: {
+      title: "Transformation office setup",
+      copy: "A lightweight execution office with cadence, issue escalation, ownership, and communication routines.",
+      items: ["Execution cadence", "Workstream owners", "Leadership dashboard"]
     }
   },
-  operating: {
-    explore: {
-      title: "Process check",
-      copy: "A short look at where the work slows down, where people wait, and what can be made easier first.",
-      items: ["Where time goes", "Where decisions stall", "Small fixes"]
+  capability: {
+    assess: {
+      title: "Capability gap scan",
+      copy: "A focused review of the skills, behaviours, and learning systems needed to support the next stage.",
+      items: ["Audience analysis", "Capability map", "Learning priorities"]
     },
-    build: {
-      title: "Working routine",
-      copy: "A simple rhythm for meetings, notes, owners, and follow-up so the team can keep momentum.",
-      items: ["Meeting rhythm", "Owner list", "Follow-up format"]
+    design: {
+      title: "Leadership academy design",
+      copy: "A structured program architecture with modules, workshops, materials, and facilitator guidance.",
+      items: ["Curriculum architecture", "Workshop flow", "Adoption materials"]
     },
-    scale: {
-      title: "Cleanup session",
-      copy: "A practical reset for a process that has collected too many steps, meetings, or unclear owners.",
-      items: ["Remove clutter", "Clarify owners", "Agree the next routine"]
+    mobilise: {
+      title: "Capability rollout",
+      copy: "A rollout path that connects learning sessions to manager follow-up, team routines, and measurable adoption.",
+      items: ["Rollout plan", "Manager toolkit", "Adoption check-ins"]
     }
   }
 };
@@ -90,11 +90,11 @@ function updatePlanner() {
   const contactSelect = document.querySelector(".contact-form select[name='focus']");
   if (contactSelect) {
     const map = {
-      strategy: "Business advisory",
-      learning: "Workshop support",
-      operating: "Operating support"
+      strategy: "Corporate and growth strategy",
+      transformation: "Transformation and operating model",
+      capability: "Learning and leadership academies"
     };
-    contactSelect.value = map[focus] || "Business advisory";
+    contactSelect.value = map[focus] || "Corporate and growth strategy";
   }
 }
 
