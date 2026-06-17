@@ -105,10 +105,40 @@ select {
 
 .brand-logo {
   display: block;
-  width: clamp(8.2rem, 12vw, 10.4rem);
+  width: clamp(8.4rem, 11vw, 10.3rem);
   height: auto;
-  border: 1px solid rgba(255, 250, 240, 0.38);
-  box-shadow: 0 10px 30px rgba(12, 32, 28, 0.2);
+  color: currentColor;
+  overflow: visible;
+}
+
+.logo-word {
+  fill: currentColor;
+  font-family: Didot, "Bodoni 72", Georgia, "Times New Roman", serif;
+  font-size: 84px;
+  font-weight: 400;
+}
+
+.logo-frame,
+.logo-ornament {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.logo-frame-outer {
+  stroke-width: 1.5;
+}
+
+.logo-frame-inner {
+  stroke-width: 0.9;
+  opacity: 0.82;
+}
+
+.logo-ornament {
+  stroke-width: 1.05;
+  opacity: 0.9;
 }
 
 .site-nav {
@@ -680,9 +710,11 @@ select {
 }
 
 .footer-logo {
-  width: 7.6rem;
+  width: 9.6rem;
   height: auto;
-  border: 1px solid rgba(255, 250, 240, 0.18);
+  color: var(--warm);
+  opacity: 0.92;
+  overflow: visible;
 }
 
 .reveal {
@@ -723,7 +755,7 @@ select {
   }
 
   .brand-logo {
-    width: 7.8rem;
+    width: 7.65rem;
   }
 
   .nav-toggle {

@@ -7,7 +7,6 @@ Static website for mufeng, with a public-facing brand treatment.
 - `index.html` - full website markup and SEO metadata
 - `styles.css` - responsive visual system
 - `script.js` - navigation, planner, and enquiry interactions
-- `assets/mufeng-logo.png` - brand logo
 - `assets/mufeng-workshop-hero.png` - generated hero image
 - `assets/favicon.svg` - site icon
 - `robots.txt` and `sitemap.xml` - search engine files for `mufengsg.com`
